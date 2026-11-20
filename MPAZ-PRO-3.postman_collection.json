@@ -1,0 +1,435 @@
+{
+  "info": {
+    "name": "MPAZ PRO 3 - Microservicios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "ms-contenidos - Objetivos",
+      "item": [
+        {
+          "name": "Listar objetivos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/objetivos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "objetivos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener objetivo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/objetivos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "objetivos",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear objetivo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/objetivos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "objetivos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"asignatura\": \"CIENCIAS\",\n  \"unidad\": \"Unidad 2: Los materiales\",\n  \"codigo\": \"OA 9\",\n  \"descripcion\": \"Reconocer materiales y sus propiedades\",\n  \"estado\": \"PENDIENTE\",\n  \"observacion\": \"\",\n  \"asignado\": false,\n  \"maxIntentos\": 2,\n  \"informeValidado\": false,\n  \"fechaValidacion\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar objetivo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/objetivos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "objetivos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"asignatura\": \"LENGUAJE\",\n  \"unidad\": \"Unidad 1: El mundo de los cuentos\",\n  \"codigo\": \"Por definir\",\n  \"descripcion\": \"Reconocer personajes, lugares y acciones de un cuento\",\n  \"estado\": \"APROBADO\",\n  \"observacion\": \"\",\n  \"asignado\": true,\n  \"maxIntentos\": 3,\n  \"informeValidado\": false,\n  \"fechaValidacion\": 0\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar objetivo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/objetivos/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "objetivos",
+                "5"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ms-contenidos - Preguntas",
+      "item": [
+        {
+          "name": "Listar preguntas de un objetivo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas?objetivoId=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas"
+              ],
+              "query": [
+                {
+                  "key": "objetivoId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener pregunta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear pregunta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"objetivoId\": 1,\n  \"tipo\": \"DESAFIO\",\n  \"nivel\": 1,\n  \"enunciado\": \"¿Cuál palabra es un sustantivo?\",\n  \"opcionA\": \"Correr\",\n  \"opcionB\": \"Casa\",\n  \"opcionC\": \"Rápido\",\n  \"correcta\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar pregunta",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"objetivoId\": 1,\n  \"tipo\": \"DESAFIO\",\n  \"nivel\": 1,\n  \"enunciado\": \"¿Cuál palabra es un sustantivo?\",\n  \"opcionA\": \"Correr\",\n  \"opcionB\": \"Casa\",\n  \"opcionC\": \"Rápido\",\n  \"correcta\": 1,\n  \"id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar pregunta",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas/25",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas",
+                "25"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crear pregunta inválida (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/preguntas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "preguntas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"objetivoId\": 1,\n  \"tipo\": \"DESAFIO\",\n  \"nivel\": 1,\n  \"enunciado\": \"\",\n  \"opcionA\": \"Correr\",\n  \"opcionB\": \"Casa\",\n  \"opcionC\": \"Rápido\",\n  \"correcta\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ms-resultados - Intentos",
+      "item": [
+        {
+          "name": "Listar intentos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/intentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "intentos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Intentos de un objetivo y estudiante",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/intentos?objetivoId=1&rut=25418732-1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "intentos"
+              ],
+              "query": [
+                {
+                  "key": "objetivoId",
+                  "value": "1"
+                },
+                {
+                  "key": "rut",
+                  "value": "25418732-1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Obtener intento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/intentos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "intentos",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Registrar intento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8082/api/intentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "intentos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rutEstudiante\": \"25418732-1\",\n  \"objetivoId\": 1,\n  \"respuestas\": [\n    {\n      \"preguntaId\": 4,\n      \"elegida\": 0,\n      \"esCorrecta\": true\n    },\n    {\n      \"preguntaId\": 5,\n      \"elegida\": 2,\n      \"esCorrecta\": false\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar intento",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/intentos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "intentos",
+                "1"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
